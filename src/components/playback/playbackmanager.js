@@ -2553,6 +2553,9 @@ define(['events', 'datetime', 'appSettings', 'itemHelper', 'pluginManager', 'pla
             var directOptions;
 
             if (type === 'Video' || type === 'Audio') {
+                
+                //20200909修改，直接流播放
+                mediaSource.SupportsDirectStream = true;
 
                 contentType = getMimeType(type.toLowerCase(), mediaSourceContainer);
 
