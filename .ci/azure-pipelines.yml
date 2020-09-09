@@ -1,0 +1,17 @@
+trigger:
+  batch: true
+  branches:
+    include:
+    - '*'
+  tags:
+    include:
+    - '*'
+pr:
+  branches:
+    include:
+    - '*'
+
+jobs:
+- template: azure-pipelines-build.yml
+- template: azure-pipelines-lint.yml
+- template: azure-pipelines-package.yml
