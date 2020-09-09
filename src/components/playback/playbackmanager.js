@@ -2405,7 +2405,15 @@ define(['events', 'datetime', 'appSettings', 'itemHelper', 'pluginManager', 'pla
             }
             Promise.all(promiseArray).then(function (data) {
                 loading.hide();
-                toVlcPlayer.toPlayerList(data);
+                var jsoa = [];
+                for (var i = 0; i < data.length; i++) {
+                    var name = data[i].item.Name;
+                    var url = data[i].url;
+                    var backdropUrl = data[i].backdropUrl;
+                    var startPosition = data[i].item.UserData.PlaybackPositionTicks;
+                    jsoa[i] = { 'title': name, 'url': url, 'picture': backdropUrl, 'tracks': startPosition };
+                }
+                toVlcPlayer.toPlayList(JSON.stringify(jsoa));
             });
         }
         
