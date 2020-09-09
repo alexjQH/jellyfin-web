@@ -2396,7 +2396,21 @@ define(['events', 'datetime', 'appSettings', 'itemHelper', 'pluginManager', 'pla
             });
         }
 
+        //20200909新增
         function playAfterBitrateDetect(maxBitrate, item, playOptions, onPlaybackStartedFn) {
+            var items = playOptions.items;
+            var promiseArray = [];
+            for (var i = 0; i < items.length; i++) {
+                promiseArray.push(self.getPlaybackInfo(items[i], items.playOptions));
+            }
+            Promise.all(promiseArray).then(function (data) {
+                loading.hide();
+                toVlcPlayer.toPlayerList(data);
+            });
+        }
+        
+        //20200909修改
+        function playAfterBitrateDetect2(maxBitrate, item, playOptions, onPlaybackStartedFn) {
 
             var startPosition = playOptions.startPositionTicks;
 
