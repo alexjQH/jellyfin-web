@@ -37,7 +37,8 @@ define(['browser', 'appSettings', 'events'], function (browser, appSettings, eve
     };
 
     LayoutManager.prototype.getSavedLayout = function (layout) {
-        return appSettings.get('layout');
+        //return appSettings.get('layout');
+        return "tv";
     };
 
     LayoutManager.prototype.autoLayout = function () {
