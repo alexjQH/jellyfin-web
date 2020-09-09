@@ -114,9 +114,12 @@ import appHost from 'apphost';
             'back': () => {
                 if (appRouter.canGoBack()) {
                     appRouter.back();
-                } else if (appHost.supports('exit')) {
-                    appHost.exit();
+                } else {
+                    toVlcPlayer.appExit();
                 }
+                //else if (appHost.supports('exit')) {
+                //    appHost.exit();
+                //}
             },
             'select': () => {
                 select(sourceElement);
