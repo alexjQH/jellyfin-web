@@ -8,11 +8,11 @@
             </div>
 
             <div class="inputContainer">
-                <input is="emby-input" type="text" id="txtManualName" required="required" label="${LabelUser}" autocomplete="username" autocapitalize="off" />
+                <input is="emby-input" type="text" id="txtManualName" required="required" label="${LabelUser}" autocomplete="username" autocapitalize="off" onkeypress="return event.keyCode != 13;" />
             </div>
 
             <div class="inputContainer">
-                <input is="emby-input" id="txtManualPassword" type="password" label="${LabelPassword}" autocomplete="current-password" />
+                <input is="emby-input" id="txtManualPassword" type="password" label="${LabelPassword}" autocomplete="current-password" onkeypress="return event.keyCode != 13;" />
             </div>
 
             <label class="checkboxContainer">
