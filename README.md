@@ -2,4 +2,6 @@
 
 其它说明请移步https://github.com/jellyfin/jellyfin-web
 
+yarn install
+
 打包: yarn build:standalone
